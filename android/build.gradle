@@ -2,7 +2,7 @@ group 'saad.farhan.flutter_facebook_sdk'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+//    ext.kotlin_version = '1.6.10'
     repositories {
         google()
         jcenter()
@@ -26,13 +26,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 34
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    compileSdkVersion 30
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 16
     }
     lintOptions {
         disable 'InvalidPackage'
